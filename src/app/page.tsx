@@ -1,10 +1,10 @@
 import ProfileHeader from "@/components/ProfileHeader";
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 
 const links = [
-  { label: "GitHub", url: "https://github.com/", icon: "🐙" },
-  { label: "LinkedIn", url: "https://linkedin.com/", icon: "💼" },
-  { label: "Blog", url: "https://example.com/", icon: "✍️" },
+  { id: "github", label: "GitHub", url: "https://github.com/", icon: "🐙" },
+  { id: "linkedin", label: "LinkedIn", url: "https://linkedin.com/", icon: "💼" },
+  { id: "blog", label: "Blog", url: "https://example.com/", icon: "✍️" },
 ];
 
 export default function Home() {
@@ -15,11 +15,7 @@ export default function Home() {
         bio="풀스택 개발자 | 요즘에는 ai 개발에 관심이 많아요"
         avatarUrl="https://placehold.co/200x200"
       />
-      <div className="flex w-full flex-col gap-3.5">
-        {links.map((link) => (
-          <LinkCard key={link.label} {...link} />
-        ))}
-      </div>
+      <LinkList links={links} />
     </main>
   );
 }
